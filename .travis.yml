@@ -1,0 +1,15 @@
+
+language: node_js
+node_js:
+- 'stable'
+- '5.0.0'
+- '4.0.0'
+install:
+- npm install
+services: mongodb
+env:
+  global:
+    - export TWILIO_ACCOUNT_SID=ACx
+    - export TWILIO_AUTH_TOKEN=x
+    - export TWILIO_NUMBER=+12028219726
+    - export MONGO_URL_TEST=mongodb://localhost/appointment-reminders-node-test

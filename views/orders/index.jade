@@ -1,0 +1,26 @@
+extends ../layout
+
+block title
+  | Orders
+
+
+block content
+  .container-fluid
+    #order-index-header.row
+      .col-md-1.col-xs-1
+        span.order-index-title ORDERS
+      .col-md-10.col-xs-10.text-center
+        img#order-index-icon(src='/img/small-logo.png')
+    .row
+      .col-xs-12.no-padding
+        .list-group.list-special
+          each order in orders
+            a.list-group-item.list-special-item(href="/orders/#{order.id}/show")
+              .row
+                .col-xs-8.text-uppercase
+                  | !{order.customerName}
+                .col-xs-3.index-status.text-uppercase
+                  | !{order.status}
+                .col-xs-1
+                  i.fa.fa-caret-right
+      div

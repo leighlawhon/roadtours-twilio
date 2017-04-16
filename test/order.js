@@ -2,27 +2,27 @@
 // var expect = require('chai').expect;
 // var supertest = require('supertest');
 // var app = require('../app.js');
-// var Order = require('../models/order');
+// var tour = require('../models/tour');
 // var agent = supertest(app);
 //
-// describe('order', function () {
+// describe('tour', function () {
 //
-//   var order = {};
+//   var tour = {};
 //
 //   beforeEach(function(done) {
-//     Order.collection.remove();
-//     var orders = [
+//     tour.collection.remove();
+//     var tours = [
 //       { customerName: 'Vincent Vega',   customerPhoneNumber: '+17654532001',  status : 'Ready', notificationStatus : 'None' },
 //       { customerName: 'Mia Wallace',   customerPhoneNumber: '+17654532002' , status : 'Ready', notificationStatus : 'None'  },
 //     ];
-//     Order.collection.insert(orders);
-//     Order.findOne().then(function(ord){ order = ord;done();});
+//     tour.collection.insert(tours);
+//     tour.findOne().then(function(ord){ tour = ord;done();});
 //   });
 //
-//   describe('GET /order', function () {
-//     it('list all orders', function (done) {
+//   describe('GET /tour', function () {
+//     it('list all tours', function (done) {
 //       agent
-//         .get('/orders')
+//         .get('/tours')
 //         .expect(function (response) {
 //           expect(response.text).to.contain('Vincent Vega');
 //           expect(response.text).to.contain('Mia Wallace');
@@ -31,59 +31,59 @@
 //     });
 //   });
 //
-//   describe('GET to /orders/:orderId/show', function () {
-//     it('shows an order detail', function (done) {
+//   describe('GET to /tours/:tourId/show', function () {
+//     it('shows an tour detail', function (done) {
 //       agent
-//         .get(`/orders/${order.id}/show`)
+//         .get(`/tours/${tour.id}/show`)
 //         .expect(function (response) {
-//           expect(response.text).to.contain(order.customerName);
-//           expect(response.text).to.contain(order.status);
-//           expect(response.text).to.contain(order.notificationStatus);
+//           expect(response.text).to.contain(tour.customerName);
+//           expect(response.text).to.contain(tour.status);
+//           expect(response.text).to.contain(tour.notificationStatus);
 //         })
 //         .expect(200, done);
 //     });
 //   });
 //
-//   describe('POST /orders/:orderId/pickup', function () {
-//     it('changes the status of an order to Shipped', function (done) {
+//   describe('POST /tours/:tourId/pickup', function () {
+//     it('changes the status of an tour to Shipped', function (done) {
 //       agent
-//         .post(`/orders/${order.id}/pickup`)
+//         .post(`/tours/${tour.id}/pickup`)
 //         .expect(function(response) {
-//           Order.findOne({_id: order.id})
-//             .then(function (order) {
-//               expect(order.status).to.contain('Shipped');
+//           tour.findOne({_id: tour.id})
+//             .then(function (tour) {
+//               expect(tour.status).to.contain('Shipped');
 //             });
 //         })
 //         .expect(302, done);
 //     });
 //   });
 //
-//   describe('POST /orders/:orderId/deliver', function () {
-//     it('changes the status of an order to Delivered', function (done) {
+//   describe('POST /tours/:tourId/deliver', function () {
+//     it('changes the status of an tour to Delivered', function (done) {
 //       agent
-//         .post(`/orders/${order.id}/deliver`)
+//         .post(`/tours/${tour.id}/deliver`)
 //         .expect(function(response) {
-//           Order.findOne({_id: order.id})
-//             .then(function (order) {
-//               expect(order.status).to.contain('Delivered');
+//           tour.findOne({_id: tour.id})
+//             .then(function (tour) {
+//               expect(tour.status).to.contain('Delivered');
 //             });
 //         })
 //         .expect(302, done);
 //     });
 //   });
 //
-//   describe('POST /orders/:orderId/status/update', function () {
-//     it('changes the notification status of an order to Sent(capitalized)', function (done) {
+//   describe('POST /tours/:tourId/status/update', function () {
+//     it('changes the notification status of an tour to Sent(capitalized)', function (done) {
 //       agent
-//         .post(`/orders/${order.id}/status/update`)
+//         .post(`/tours/${tour.id}/status/update`)
 //         .type('form')
 //         .send({
 //           MessageStatus: 'sent',
 //         })
 //         .expect(function(response) {
-//           Order.findOne({_id: order.id})
-//             .then(function (order) {
-//               expect(order.notificationStatus).to.contain('Sent');
+//           tour.findOne({_id: tour.id})
+//             .then(function (tour) {
+//               expect(tour.notificationStatus).to.contain('Sent');
 //             });
 //         })
 //         .expect(200, done);

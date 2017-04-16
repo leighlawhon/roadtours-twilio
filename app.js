@@ -7,7 +7,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var flash = require('connect-flash');
 
-var orders = require('./routes/orders');
+var tours = require('./routes/tours');
 var index = require('./routes/index');
 
 var app = express();
@@ -40,7 +40,7 @@ app.use(function(req, res, next){
 });
 
 app.use('/', index);
-app.use('/orders', orders);
+app.use('/tours', tours);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -1,26 +1,26 @@
 extends ../layout
 
 block title
-  | Orders
+  | tours
 
 
 block content
   .container-fluid
-    #order-index-header.row
+    #tour-index-header.row
       .col-md-1.col-xs-1
-        span.order-index-title ORDERS
+        span.tour-index-title Tours
       .col-md-10.col-xs-10.text-center
-        img#order-index-icon(src='/img/small-logo.png')
+        img#tour-index-icon(src='/img/small-logo.png')
     .row
       .col-xs-12.no-padding
         .list-group.list-special
-          each order in orders
-            a.list-group-item.list-special-item(href="/orders/#{order.id}/show")
+          each tour in tours
+            a.list-group-item.list-special-item(href="/tours/#{tour.id}/show")
               .row
                 .col-xs-8.text-uppercase
-                  | !{order.customerName}
+                  | !{tour.tourName}
                 .col-xs-3.index-status.text-uppercase
-                  | !{order.status}
+                  | !{tour.status}
                 .col-xs-1
                   i.fa.fa-caret-right
       div

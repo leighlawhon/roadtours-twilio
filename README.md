@@ -50,7 +50,7 @@ ETA notifications implementation with Node.js/Express and Twilio.
 1. Seed the initial data into the database
 
    ```bash
-   $ mongo localhost/eta-notifications-node seed/orders.js
+   $ mongo localhost/eta-notifications-node seed/tours.js
    ```
 
 1. Start the development server

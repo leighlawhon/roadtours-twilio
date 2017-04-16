@@ -1,8 +1,8 @@
 db.dropDatabase();
 
-var orders = [
-  { customerName: 'Vincent Vega',   customerPhoneNumber: '+17654532001',  status : 'Ready', notificationStatus : 'None' },
-  { customerName: 'Mia Wallace',   customerPhoneNumber: '+17654532002' , status : 'Ready', notificationStatus : 'None'  },
+var tours = [
+  { customerName: 'Chewy-1897',   customerPhoneNumber: '+12028219726',  status : 'Ready', notificationStatus : 'None' },
+  { customerName: 'Innana-1598',   customerPhoneNumber: '+12028219726' , status : 'Ready', notificationStatus : 'None'  },
 ];
 
-db.orders.insert(orders);
+db.tours.insert(tours);

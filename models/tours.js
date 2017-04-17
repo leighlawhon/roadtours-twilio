@@ -6,6 +6,7 @@ var tourSchema = new mongoose.Schema({
   tourName:String,
   status : { type: String, default: 'Ready' },
   notificationStatus : { type: String, default: 'None' },
+  startDriver: { type: Object, default: {'phone': '+12028219726'} }
 });
 
 tourSchema.methods.sendSmsNotification = function (message, statusCallback , callback) {
@@ -13,7 +14,7 @@ tourSchema.methods.sendSmsNotification = function (message, statusCallback , cal
   var client = new twilio.RestClient(cfg.twilioAccountSid, cfg.twilioAuthToken);
   var self = this;
   var options = {
-    to:  self.start.phone,
+    to:  self.startDriver.phone,
     from: cfg.twilioPhoneNumber,
     body: message,
     statusCallback: statusCallback

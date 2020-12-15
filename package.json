@@ -47,7 +47,7 @@
     "leaflet": "^1.0.3",
     "lodash": "^4.17.4",
     "mongo-migrate": "^0.1.0",
-    "mongoose": "^4.4.4",
+    "mongoose": "^5.11.7",
     "morgan": "~1.6.1",
     "normalize.css": "^4.0.0",
     "react": "^15.0.0",
